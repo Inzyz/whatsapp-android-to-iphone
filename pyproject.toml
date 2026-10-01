@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wa2ios"
+version = "0.1.0"
+description = "Move WhatsApp chats from Android to iPhone, locally and privately, without third-party services."
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.10"
+dependencies = [
+    "wa-crypt-tools==0.1.0",   # offline crypt15 decryption (GPL-3.0); pinned so its internal API is stable
+    "pycryptodomex>=3.18",
+    "protobuf>=3.20",
+]
+
+[project.optional-dependencies]
+media = ["Pillow>=10"]                 # thumbnails for transferred photos
+restore = ["pymobiledevice3>=4"]       # `wa2ios restore` without iTunes UI
+
+[project.scripts]
+wa2ios = "wa2ios.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wa2ios*"]

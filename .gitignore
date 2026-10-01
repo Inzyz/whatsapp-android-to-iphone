@@ -1,0 +1,23 @@
+# Never commit anything that could contain messages, keys or backups.
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.crypt12
+*.crypt14
+*.crypt15
+*.key
+key.txt
+WhatsApp/
+wa2ios-work/
+Backup/
+
+__pycache__/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.ruff_cache/
